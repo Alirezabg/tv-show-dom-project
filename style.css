@@ -5,5 +5,14 @@
   display: flex;
   flex-direction: wrap;
   flex-wrap: wrap;
- 
+}
+.episodeDiv {
+  max-width: 20vw;
+  margin: auto;
+  border-style: solid;
+  border-radius: 20px;
+  justify-content: center;
+}
+.episodeImage {
+  max-width: 18vw;
 }
