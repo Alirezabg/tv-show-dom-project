@@ -10,10 +10,21 @@
   </head>
 
   <body>
-    <div id="root"></div>
-    <div id="Episods" class="EpisodsClass"></div>
-
-
+    <div id="root">
+      <div id="headerBar" class="headerBar">
+        <form class="search" id="search">
+          <input
+            id="searchBar"
+            class="searchBar"
+            placeholder="Search for a Episode"
+            type="text"
+          />
+          <select name="" id="selectSeries" class="selector"></select>
+          <select name="" id="selectEpisod" class="selector"></select>
+        </form>
+      </div>
+      <div id="Episods" class="EpisodsClass"></div>
+    </div>
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
     <script src="episodes.js"></script>
     <script src="shows.js"></script>
