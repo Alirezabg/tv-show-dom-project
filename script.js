@@ -4,7 +4,7 @@ function setup() {
     .then((Response) => Response.json())
     .then((data) => makePageForEpisodes(data));
 }
-
+/////////////////////////////makePageForEpisodes Function/////////////////
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
 
@@ -12,10 +12,13 @@ function makePageForEpisodes(episodeList) {
   episodeList.forEach((element) => {
     let selectSeries = document.getElementById(`selectSeries`);
     let option = document.createElement(`option`);
-    option.innerText = element.name;
+    let episodeNumber =
+      (`0` + element.season).slice(-2) + `E` + (`0` + element.number).slice(-2);
+    option.innerText = `S${episodeNumber} - ` + element.name;
+    option.value = episodeNumber;
     selectSeries.appendChild(option);
   });
-  
+
   for (let episode of episodeList) {
     let episodeDiv = document.createElement(`div`);
     episodeDiv.className = `episodeDiv`;
@@ -42,9 +45,23 @@ function makePageForEpisodes(episodeList) {
     searchBar.addEventListener(`keyup`, function () {
       runSearchBar(searchBar.value);
     });
+    selectSeries.addEventListener(`change`, function () {
+      selectBar(selectSeries.value);
+    });
   }
 }
+///////////////////// select Bar////////////////////
+function selectBar(selectSeriesValue) {
+  const allEpisodes = getAllEpisodes();
+  let episodeNum = selectSeriesValue.split(`E`);
+  console.log(selectSeriesValue);
+  const epList = allEpisodes
+    .filter((el) => el.season == episodeNum[0])
+    .filter((el) => el.number == episodeNum[1]);
+  filterPageForEpisodes(epList);
+}
 
+///////////////////////search Bar/////////////////////
 function runSearchBar(searchText) {
   const allEpisodes = getAllEpisodes();
 
@@ -58,6 +75,7 @@ function runSearchBar(searchText) {
   filterPageForEpisodes(epList);
 }
 
+//////////////////Filter Function////////////
 function filterPageForEpisodes(episodeList) {
   let episodesDiv = document.getElementById(`Episods`);
   episodesDiv.innerHTML = ``;
@@ -84,4 +102,7 @@ function filterPageForEpisodes(episodeList) {
   }
 }
 
+///////////////////////////// Copy Right Policy//////////////////////////////
+
+//////////////////////////
 window.onload = setup;

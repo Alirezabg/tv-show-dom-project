@@ -1,13 +1,12 @@
 #root {
-  
 }
 body {
   background-color: rgb(230, 224, 217);
 }
-.headerBar{
+.headerBar {
   background-color: rgb(156, 143, 124);
 }
-.searchBar{
+.searchBar {
   margin: 20px 50px;
 }
 .EpisodsClass {
@@ -33,4 +32,8 @@ body {
 .episodeImage {
   max-width: 275;
   margin: auto;
+}
+#footer {
+  text-align: center;
+  padding: 10px;
 }
