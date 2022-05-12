@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>TV SHOW PROJECT | Alireza Bagheri (Alirezabg)</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TV Show Project | My Name (My GitHub username)</title>
@@ -10,11 +11,25 @@
 
   <body>
     <div id="root">
+      <div id="headerBar" class="headerBar">
+        <form class="search" id="search">
+          <input
+            id="searchBar"
+            class="searchBar"
+            placeholder="Search for a Episode"
+            type="text"
+          />
+          <select name="" id="selectSeries" class="selector"><option>Show Series Summary</option></select>
+          <select name="" id="selectEpisode" class="selector"><option>Show All Episodes</option></select>
+        </form>
+        <button id="ShowSeriesSummery">Show All Summary</button>
+      </div>
+      <div id="Episods" class="EpisodsClass"></div>
     </div>
-
+    <footer id="footer">The data has come from TVMaze.com.</footer>
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
     <script src="episodes.js"></script>
-
+    <script src="shows.js"></script>
     <!-- Loads YOUR javascript code -->
     <script src="script.js"></script>
   </body>
