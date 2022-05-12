@@ -1,7 +1,7 @@
 //You can edit ALL of the code here
 
 function setup() {
-  let selectSeriesValue = makePageForSeries();
+  // let selectSeriesValue = makePageForSeries();
 
   showSummaries();
   // makeMenu(selectSeriesValue);
